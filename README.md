@@ -95,6 +95,7 @@ public class DependencyLoaderListener implements ServletContextListener {
 ```
 
 ## Mapping Servlets
+Enter the following information into the `web.xml` file to describe and map the servlets.
 ### Describe the servlet:
 Each servlet must be described with a name and class. ex: 
 ```
