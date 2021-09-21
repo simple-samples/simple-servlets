@@ -47,7 +47,9 @@ This will be the first part of your URL after the port. ex:
 ### Directory Structure:
 In your deployment directory there should be a WEB-INF folder for web.xml and other any 
 resources needed by tomcat. This document suggests a folder called webapp 
-in the main/ directory. Resources needed at runtime can be accessed relatively from there. 
+in the main/ directory. Resources needed at runtime can be accessed relatively from there.  
+
+Also add a package under main called "servlets" where we will define the listener class and our servlet classes.
 
 
 ### Servlet Maven Dependency:
@@ -69,7 +71,7 @@ This must be listed in the web.xml file with the `<listener>` tag.
 This project's listener is described:
 ```
 <listener>
-    <listener-class>Services.DependencyLoaderListener</listener-class>
+    <listener-class>servlets.DependencyLoaderListener</listener-class>
 </listener>
 ```
 
@@ -96,7 +98,7 @@ Each servlet must be described with a name and class. ex:
 ```
     <servlet>
         <servlet-name>pingServlet</servlet-name>
-        <servlet-class>servlet.PingServlet</servlet-class>
+        <servlet-class>servlets.PingServlet</servlet-class>
     </servlet>
 ```
 
