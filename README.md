@@ -1,4 +1,6 @@
 # Tomcat Project:
+REFACTOR: Add in instructions to write the classes necessary
+
 ## New Project Setup
 ### Starting a New Project
 Create a new maven project in IntelliJ. You should get the boilerplate maven directories, including src/main/java. Create a new directory under main called `webapp`. Inside that directory create a new directory called `WEB-INF`. Then inside WEB-INF create a file called `web.xml`. So now we should have the following path and file:  
