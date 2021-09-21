@@ -1,12 +1,6 @@
 # Tomcat Project:
-NOTES REFACTOR: 
- - get smart tomcat from settings > plugins > ...
- - add new directories WEB-INF
- - add pom packaging setup - WAR
-
-
-
-## New Project
+## New Project Setup
+### Starting a New Project
 Create a new maven project in IntelliJ. You should get the boilerplate maven directories, including src/main/java. Create a new directory under main called `webapp`. Inside that directory create a new directory called `WEB-INF`. Then inside WEB-INF create a file called `web.xml`. So now we should have the following path and file:  
 `src/main/webapp/WEB-INF/web.xml`
   
@@ -26,6 +20,15 @@ In the `web.xml` file add the following boilerplate xml code:
         version="2.5">
 </web-app>
 ```
+### Getting the Smart Tomcat Plugin
+If you don;t already have it installed, we need to get the Smart Tomcat plugin for Intellij. Go to File > Settings > Plugins and type "smart tomcat" into the search bar. You should see Smart Tomcat come up, click install. If it says "installed" then this step is already complete.
+
+### Setting Maven to Package a WAR
+Open the `pom.xml` file and add the following information under the groupID, version, and artifactID tags.
+```xml
+<packaging>war</packaging>
+```
+This tells maven we are going to output a WAR file, not a JAR file. Jar is Java ARchive. WAR is Web ARchive. WAR files are nearly the same as JAR, you can explore these files with any zip program like 7zip or winrar if you are so inclined.
 
 ## Run Config
 ### Tomcat Server:
