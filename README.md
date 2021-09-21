@@ -1,5 +1,7 @@
 # Tomcat Project:
-
+NOTES REFACTOR: 
+ - add run config setup, new template
+ - add pom packaging setup - WAR
 ## Run Config
 ### Tomcat Server:
 Point tomcat server to the root directory of the tomcat software. ex: 
