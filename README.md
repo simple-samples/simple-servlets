@@ -125,3 +125,27 @@ points to the PingServlet class.
 ```
 HTTP requests sent to this URL will be handled by the "do" methods in PingServlet.  
 
+## Servlet Class
+We need a class for our ping servlet. The servlet class will extend `HttpServlet` and override the HTTP methods we want the servlet to handle. For now that just means the `doGet()` method. Create a class in the servlets package named `PingServlet` and use the following code:
+
+```java
+   
+package servlets;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class PingServlet extends HttpServlet {
+/*
+This will take a simple GET request and respond with "Pong!" and status 202, indicating the request was accepted.
+ */
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setStatus(202);
+        resp.getWriter().print("Pong!");
+    }
+}
+```
