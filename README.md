@@ -24,9 +24,12 @@ In the `web.xml` file add the following boilerplate xml code:
 If you don;t already have it installed, we need to get the Smart Tomcat plugin for Intellij. Go to File > Settings > Plugins and type "smart tomcat" into the search bar. You should see Smart Tomcat come up, click install. If it says "installed" then this step is already complete.
 
 ### Setting Maven to Package a WAR
-Open the `pom.xml` file and add the following information under the groupID, version, and artifactID tags.
+Open the `pom.xml` file and add the following information to the groupID, artifactID, and version tags like this:
 ```xml
-<packaging>war</packaging>
+    <groupId>org.example</groupId>
+    <artifactId>servlet-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 ```
 This tells maven we are going to output a WAR file, not a JAR file. Jar is Java ARchive. WAR is Web ARchive. WAR files are nearly the same as JAR, you can explore these files with any zip program like 7zip or winrar if you are so inclined.
 
