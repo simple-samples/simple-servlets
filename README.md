@@ -31,6 +31,8 @@ Open the `pom.xml` file and add the following information under the groupID, ver
 This tells maven we are going to output a WAR file, not a JAR file. Jar is Java ARchive. WAR is Web ARchive. WAR files are nearly the same as JAR, you can explore these files with any zip program like 7zip or winrar if you are so inclined.
 
 ## Run Config
+Click "Add configuration" on the top of the IntelliJ window to bring up the run config editor. Click the "add new" link (on the left) and select Smart Tomcat. This load the smart tomcat run config template, and we will fill in some of the options:
+
 ### Tomcat Server:
 Point tomcat server to the root directory of the tomcat software. ex: 
 `apache-tomcat-9.0.46`
