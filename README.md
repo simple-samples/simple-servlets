@@ -69,7 +69,7 @@ This dependency in the POM.xml file tells maven to load the necessary software f
 
 ### Listener:
 In order for the tomcat web server to execute servlets, we need a listener. 
-This must be listed in the web.xml file with the `<listener>` tag. 
+This must be listed in the `web.xml` file with the `<listener>` tag. 
 This project's listener is described:
 ```
 <listener>
@@ -79,8 +79,13 @@ This project's listener is described:
 
 The listener itself implements `javax.servlet.ServletContextListener` and must 
 override `contextInitialized` and `contextDestroyed`.
-The listener for this project is:
+So create a class in the servlets package named `DependencyLoaderListener`, then paste this code into the file:
 ```
+package servlets;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
 public class DependencyLoaderListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
