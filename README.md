@@ -58,7 +58,7 @@ Also add a package under main called "servlets" where we will define the listene
 
 ### Servlet Maven Dependency:
 This dependency in the POM.xml file tells maven to load the necessary software for servlets.
-```
+```xml
 <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 <dependency>
     <groupId>javax.servlet</groupId>
@@ -73,7 +73,7 @@ This dependency in the POM.xml file tells maven to load the necessary software f
 In order for the tomcat web server to execute servlets, we need a listener. 
 This must be listed in the `web.xml` file with the `<listener>` tag. 
 This project's listener is described:
-```
+```xml
 <listener>
     <listener-class>servlets.DependencyLoaderListener</listener-class>
 </listener>
@@ -82,7 +82,7 @@ This project's listener is described:
 The listener itself implements `javax.servlet.ServletContextListener` and must 
 override `contextInitialized` and `contextDestroyed`.
 So create a class in the servlets package named `DependencyLoaderListener`, then paste this code into the file:
-```
+```java
 package servlets;
 
 import javax.servlet.ServletContextEvent;
@@ -105,7 +105,7 @@ public class DependencyLoaderListener implements ServletContextListener {
 Enter the following information into the `web.xml` file to describe and map the servlets.
 ### Describe the servlet:
 Each servlet must be described with a name and class. ex: 
-```
+```xml
     <servlet>
         <servlet-name>pingServlet</servlet-name>
         <servlet-class>servlets.PingServlet</servlet-class>
@@ -117,7 +117,7 @@ And each servlet must map a URL to the name. The url-pattern will be what follow
 the context path. ex: `http://localhost:8080/CONTEXTPATH/URL-PATTERN...`
 In the following example the /ping url-pattern maps to the pingServlet, which above 
 points to the PingServlet class. 
-```
+```xml
     <servlet-mapping>
         <servlet-name>pingServlet</servlet-name>
         <url-pattern>/ping</url-pattern>
