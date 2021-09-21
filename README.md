@@ -3,6 +3,30 @@ NOTES REFACTOR:
  - get smart tomcat from settings > plugins > ...
  - add new directories WEB-INF
  - add pom packaging setup - WAR
+
+
+
+## New Project
+Create a new maven project in IntelliJ. You should get the boilerplate maven directories, including src/main/java. Create a new directory under main called `webapp`. Inside that directory create a new directory called `WEB-INF`. Then inside WEB-INF create a file called `web.xml`. So now we should have the following path and file:  
+`src/main/webapp/WEB-INF/web.xml`
+  
+In the `web.xml` file add the following boilerplate xml code:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!--web.xml is your depoyment descriptor
+        this is how tomcat gathers information about your project, such as welcome files,
+            available servlets, how to handle errors and exceptions, and other various
+            configurations you may want tomcat to know about.
+    It belongs in src/main/webapp/WEB-INF/ directory
+-->
+<web-app
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+        version="2.5">
+</web-app>
+```
+
 ## Run Config
 ### Tomcat Server:
 Point tomcat server to the root directory of the tomcat software. ex: 
