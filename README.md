@@ -1,5 +1,6 @@
 # Tomcat Project:
 NOTES REFACTOR: 
+ - get smart tomcat from settings > plugins > ...
  - add run config setup, new template
  - add pom packaging setup - WAR
 ## Run Config
