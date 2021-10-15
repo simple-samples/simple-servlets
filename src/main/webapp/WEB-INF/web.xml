@@ -11,6 +11,22 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         version="2.5">
 
+    <listener>
+        <listener-class>Services.DependencyLoaderListener</listener-class>
+    </listener>
+
+    <!-- CORS FILTER -->
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>servlet.CORSFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- /CORS FILTER -->
+
     <!--This tells tomcat where to find the servlet and what name to register it as. We can use
             the name of the servlet later to reference this instance.
             -->
@@ -41,8 +57,24 @@
         <url-pattern>/jackson</url-pattern>
     </servlet-mapping>
 
-    <listener>
-        <listener-class>Services.DependencyLoaderListener</listener-class>
-    </listener>
+    <servlet>
+        <servlet-name>thingsServlet</servlet-name>
+        <servlet-class>servlet.ThingsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>thingsServlet</servlet-name>
+        <url-pattern>/things</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>thingServlet</servlet-name>
+        <servlet-class>servlet.ThingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>thingServlet</servlet-name>
+        <url-pattern>/things/*</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>
