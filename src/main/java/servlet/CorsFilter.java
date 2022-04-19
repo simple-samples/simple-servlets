@@ -5,12 +5,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class CORSFilter implements Filter {
+public class CorsFilter implements Filter {
 
     /**
      * Default constructor.
      */
-    public CORSFilter() {
+    public CorsFilter() {
         // TODO Auto-generated constructor stub
     }
 

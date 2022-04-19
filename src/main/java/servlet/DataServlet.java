@@ -1,6 +1,6 @@
 package servlet;
 
-import DAOs.DataDAO;
+import dtos.DataDto;
 import Services.PersistenceService;
 
 import javax.servlet.ServletException;
@@ -17,7 +17,7 @@ public class DataServlet extends HttpServlet {
         Integer i = Integer.parseInt(req.getParameter("integer"));
         boolean b = Boolean.parseBoolean(req.getParameter("bool"));
 
-        DataDAO data = new DataDAO(s, i, b);
+        DataDto data = new DataDto(s, i, b);
 
         PersistenceService.setData(data);
 
@@ -27,7 +27,7 @@ public class DataServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        DataDAO data = PersistenceService.getData();
+        DataDto data = PersistenceService.getData();
 
         String s = data.getString();
         Integer i = data.getInteger();

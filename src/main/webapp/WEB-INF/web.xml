@@ -18,7 +18,7 @@
     <!-- CORS FILTER -->
     <filter>
         <filter-name>CorsFilter</filter-name>
-        <filter-class>servlet.CORSFilter</filter-class>
+        <filter-class>servlet.CorsFilter</filter-class>
     </filter>
 
     <filter-mapping>

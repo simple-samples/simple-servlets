@@ -1,15 +1,15 @@
-package DAOs;
+package dtos;
 
-public class DataDAO {
+public class DataDto {
     private String string;
     private Integer integer;
     private boolean bool;
 
-    public DataDAO() {
+    public DataDto() {
 
     }
 
-    public DataDAO(String s, Integer i, boolean b) {
+    public DataDto(String s, Integer i, boolean b) {
         this.string = s;
         this.integer = i;
         this.bool = b;

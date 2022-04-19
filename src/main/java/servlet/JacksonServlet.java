@@ -1,6 +1,6 @@
 package servlet;
 
-import DAOs.DataDAO;
+import dtos.DataDto;
 import Services.PersistenceService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -15,7 +15,7 @@ public class JacksonServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String json = req.getParameter("json");
         ObjectMapper mapper = new ObjectMapper();
-        DataDAO data = mapper.readValue(json, DataDAO.class);
+        DataDto data = mapper.readValue(json, DataDto.class);
         PersistenceService.setData(data);
 
         resp.setStatus(202);
@@ -25,7 +25,7 @@ public class JacksonServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ObjectMapper mapper = new ObjectMapper();
-        DataDAO data = PersistenceService.getData();
+        DataDto data = PersistenceService.getData();
         String json = mapper.writeValueAsString(data);
 
         resp.setStatus(202);

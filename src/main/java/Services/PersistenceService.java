@@ -1,19 +1,19 @@
 package Services;
 
-import DAOs.DataDAO;
+import dtos.DataDto;
 
 public class PersistenceService {
-    private static DataDAO data;
+    private static DataDto data;
 
     static {
-        data = new DataDAO("default", 0, false);
+        data = new DataDto("default", 0, false);
     }
 
-    public static DataDAO getData() {
+    public static DataDto getData() {
         return data;
     }
 
-    public static void setData(DataDAO d) {
+    public static void setData(DataDto d) {
         data = d;
     }
 }
