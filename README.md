@@ -53,7 +53,7 @@ In your deployment directory there should be a WEB-INF folder for web.xml and ot
 resources needed by tomcat. This document suggests a folder called webapp 
 in the main/ directory. Resources needed at runtime can be accessed relatively from there.  
 
-Also add a package under main called "servlets" where we will define the listener class and our servlet classes.
+Also add a package under src/main/Java/ called "servlets" where we will define the listener class and our servlet classes.
 
 
 ### Servlet Maven Dependency:
