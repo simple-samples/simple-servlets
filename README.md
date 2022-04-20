@@ -43,7 +43,7 @@ Point tomcat server to the root directory of the tomcat software. ex:
 `apache-tomcat-9.0.46`
 ### Deployment Dir:
 Set deployment directory to the working directory of your app. This should probably 
-be the directory containing the directory `WEB-INF/`.
+be the webapp/ directory which contains `WEB-INF/`.
 ### Context Path:
 This will be the first part of your URL after the port. For example in the following URL the context path is "/CONTEXTPATH": `http://localhost:8080/CONTEXTPATH/...`
 
